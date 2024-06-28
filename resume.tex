@@ -1,0 +1,212 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{4.08003pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{: #2 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeItemSpecial}[2]{
+  \item{
+    \textbf{#1} at \textit{#2} \hfill \vspace{-4pt}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItemOneliner}[2]{
+  \item{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-3pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+{\Large \textbf{Swebert Correa}}
+\hfill
+\href{https://www.linkedin.com/in/correaswebert}{linkedin.com/in/correaswebert}\\
+
+\href{mailto:correaswebert@gatech.edu}{correaswebert@gatech.edu}
+% $\cdot$
+% \href{tel:+919702275586}{(+91) 970-227-5586}
+\hfill
+\href{https://github.com/correaswebert}{github.com/correaswebert}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Georgia Institute of Technology}{Atlanta, Georgia}
+      {Master of Science in Computer Science}{Aug 2024 - Present}
+  \resumeSubHeadingListEnd
+
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {College of Engineering, Pune}{Pune, India}
+      {Bachelor of Technology in Computer Engineering; 
+      GPA: 9.05/10.0}{Aug 2018 - Oct 2022}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+    \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Rakuten Symphony}{Pune, India}
+      {Associate Software Engineer}{Jun 2022 - Jul 2024}
+      \resumeItemListStart
+        \resumeItem{Object Storage - Resync and Rebuild}
+        {Headed the data recovery subsystem handling intermittent network issues and permanent disk failures, preventing data loss by utilising erasure coding}
+
+        \resumeItem{Object Storage - Lifecycle Management}
+        {Periodically scans the databases for  the objects to be deleted or tiered and intelligently remembers them to reduce database thrashing}
+
+        \resumeItem{Object Storage - Server-Side Encryption}
+        {Handles the encryption of objects at rest using the key provided by or issued to the requesting user, without disrupting replication of the erasure coded objects}
+        
+        \resumeItem{Block Storage - Backups}
+        {Creates site-agnostic differential backups of volume based snapshots on third-party repositories, like object stores and NFS, by efficiently de-duplicating data blocks}
+
+        \resumeItem{Block Storage - Garbage Collection}
+        {Reclaims invalid or stale data blocks of volume snapshots issued on the log-structured file system created due to deletion or acknowledgement failures.}
+
+        \resumeItem{Micro-service Diagnostic Utility}
+        {Used as the first line of defence to identify the problematic areas\\ in the micro-service architecture like failures in network, disk, memory or service}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Citi}{Pune, India}
+      {Techincal Summer Analyst}{May 2021 - Jul 2021}
+      \resumeItemListStart
+        \resumeItem{Test Automation}
+          {Optimized the in-house test automation framework, reducing the time for some loops by approximately six times, and drastically reduced manual test inputs provided.}
+        \resumeItem{Devops}
+        {Helped in creating the continuous testing pipeline using PowerShell and TeamCity along with some internal tools, allowing to obtain test results emailed on a single click.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+  
+%-----------LEADERSHIP-----------------
+\section{Leadership}
+  \resumeSubHeadingListStart
+    \resumeItemSpecial
+      {Technical Lead}
+      {Computer Society of India, COEP Student Chapter}
+      {\textit{Jul 2020 - Jul 2021}}
+     
+    \resumeItemSpecial
+      {Web Head}
+      {Impressions, Cultural Fest}
+      {\textit{May 2020 - Jun 2021}}
+  \resumeSubHeadingListEnd
+
+
+%-----------Publication-----------------
+\section{Publication}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Human-Computer Music Co-Production Using Genetic Algorithms}{}
+      {International Conference on Computing, Communication, Security and Intelligent Systems }{2022}
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem
+      {Ext2 FS}
+      {Created the file-system for MIT's xv6 OS, including drivers, syscalls and user-end API}
+      
+    \resumeSubItem
+      {BitTorrent Client}
+      {Downloads and uploads, shows stats, uses optimistic unchoking, rarest piece first, etc.}
+      
+    \resumeSubItem
+      {Intel 8085 Emulator}
+      {Parses and runs 8085 assembly displaying register and memory values on terminal}
+  \resumeSubHeadingListEnd
+
+
+%--------Academic Awards------------
+\section{Awards}
+ \resumeSubHeadingListStart
+   \resumeSubItemOneliner{\textbf{Best paper} award for the research paper presented at the IEEE IC3SIS'22 conference}{}
+
+   \resumeSubItemOneliner{Alumni Association Award for being the \textbf{student topper} in freshman year}{}
+
+    \resumeSubItemOneliner{\textbf{Second Runner-up} at the 2021 Indian National Academy of Engineering Youth Conclave}{}
+ \resumeSubHeadingListEnd
+
+
+% %--------Extracurriculars------------
+% \section{Extracurriculars}
+%  \resumeSubHeadingListStart
+%    \resumeSubItemOneliner{Member of athletics, chess and music clubs}{}
+%  \resumeSubHeadingListEnd
+
+ 
+%-------------------------------------------
+\end{document}
+
