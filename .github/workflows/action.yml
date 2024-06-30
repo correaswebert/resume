@@ -22,6 +22,6 @@ jobs:
           BRANCH: gh-pages
           CLEAN: true
           SINGLE_COMMIT: true
-          FOLDER: out
+          FOLDER: .
           GIT_CONFIG_NAME: Swebert Correa
           GIT_CONFIG_EMAIL: correaswebert@gmail.com
