@@ -44,6 +44,10 @@
   }
 }
 
+\newcommand{\point}[1]{
+    \item{#1} 
+}
+
 \newcommand{\resumeItemSpecial}[2]{
   \item{
     \textbf{#1} at \textit{#2} \hfill \vspace{-4pt}
@@ -97,7 +101,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Georgia Institute of Technology}{Atlanta, Georgia}
-      {Master of Science in Computer Science}{Aug 2024 - Present}
+      {Master of Science in Computer Science}{Aug 2024 - May 2026}
   \resumeSubHeadingListEnd
 
   \resumeSubHeadingListStart
@@ -116,50 +120,37 @@
       {Rakuten Symphony}{Pune, India}
       {Associate Software Engineer}{Jun 2022 - Jul 2024}
       \resumeItemListStart
-        \resumeItem{Object Storage - Resync and Rebuild}
-        {Headed the data recovery subsystem handling intermittent network issues and permanent disk failures, preventing data loss by utilising erasure coding}
+        \resumeItem{Resync and Rebuild}
+        {Led the data recovery subsystem, designed and developed data rebuild and resync, along with integrating erasure-coding in data path and creating disk-sets in control path}
 
-        \resumeItem{Object Storage - Lifecycle Management}
-        {Periodically scans the databases for  the objects to be deleted or tiered and intelligently remembers them to reduce database thrashing}
+        \resumeItem{Server-Side Encryption}
+        {Created the mechanism to encrypt objects at rest using the customer-\\provided key, without disrupting replication of the erasure-coded objects across heterogeneous sites}
 
-        \resumeItem{Object Storage - Server-Side Encryption}
-        {Handles the encryption of objects at rest using the key provided by or issued to the requesting user, without disrupting replication of the erasure coded objects}
-        
-        \resumeItem{Block Storage - Backups}
-        {Creates site-agnostic differential backups of volume based snapshots on third-party repositories, like object stores and NFS, by efficiently de-duplicating data blocks}
-
-        \resumeItem{Block Storage - Garbage Collection}
-        {Reclaims invalid or stale data blocks of volume snapshots issued on the log-structured file system created due to deletion or acknowledgement failures.}
+        \resumeItem{Cluster Manager}
+        {Co-developed with team lead to manage data and metadata stores, and gateways}
 
         \resumeItem{Micro-service Diagnostic Utility}
-        {Used as the first line of defence to identify the problematic areas\\ in the micro-service architecture like failures in network, disk, memory or service}
+        {Added a feature to the diagnostic toolkit to determine the number of in-flight IOs on all the distributed volume managers of the block storage using pub/sub model}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Citi}{Pune, India}
+      {Citi Bank}{Pune, India}
       {Techincal Summer Analyst}{May 2021 - Jul 2021}
       \resumeItemListStart
-        \resumeItem{Test Automation}
-          {Optimized the in-house test automation framework, reducing the time for some loops by approximately six times, and drastically reduced manual test inputs provided.}
         \resumeItem{Devops}
-        {Helped in creating the continuous testing pipeline using PowerShell and TeamCity along with some internal tools, allowing to obtain test results emailed on a single click.}
+        {Helped in creating a continuous integration pipeline using PowerShell along with some internal tools, allowing to obtain test results emailed to all the stakeholders with a \textbf{single click}}
       \resumeItemListEnd
 
-  \resumeSubHeadingListEnd
+    \resumeSubheading
+      {COEP Impressions}{Pune, India}
+      {Web Head}{May 2020 - Jun 2021}
+      \resumeItemListStart
+        \point{Handled the \textbf{domain} registration and administrated the subdomains and SSL using \textbf{Let's Encrypt}}
 
-  
-%-----------LEADERSHIP-----------------
-\section{Leadership}
-  \resumeSubHeadingListStart
-    \resumeItemSpecial
-      {Technical Lead}
-      {Computer Society of India, COEP Student Chapter}
-      {\textit{Jul 2020 - Jul 2021}}
-     
-    \resumeItemSpecial
-      {Web Head}
-      {Impressions, Cultural Fest}
-      {\textit{May 2020 - Jun 2021}}
+        \point{Developed the website using \textbf{Gatsby} and \textbf{MERN} stack which handled \textbf{1000s of registrations}}
+        
+        \point{Used \textbf{Cloudflare} as CDN and \textbf{Nginx} to load balance between the multiple \textbf{EC2} instances}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
@@ -167,8 +158,8 @@
 \section{Publication}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Human-Computer Music Co-Production Using Genetic Algorithms}{}
-      {International Conference on Computing, Communication, Security and Intelligent Systems }{2022}
+      {Human-Computer Music Co-Production Using Genetic Algorithms}{IEEE 2022}
+      {International Conference on Computing, Communication, Security and Intelligent Systems}{Best Paper Award}
   \resumeSubHeadingListEnd
 
 
@@ -176,37 +167,39 @@
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeSubItem
-      {Ext2 FS}
-      {Created the file-system for MIT's xv6 OS, including drivers, syscalls and user-end API}
+      {Ext2 for xv6 OS}
+      {Created a secondary file system for MIT's xv6 OS usable alongside its primary one, updated drivers to use slave bus, developed a Virtual File System, added kernel syscalls and user-end API}
       
     \resumeSubItem
       {BitTorrent Client}
-      {Downloads and uploads, shows stats, uses optimistic unchoking, rarest piece first, etc.}
+      {Downloads and uploads files to the network showing the ongoing file and network statistics, implemented algorithms like optimistic unchoking, rarest piece first, and endgame mode}
       
     \resumeSubItem
       {Intel 8085 Emulator}
-      {Parses and runs 8085 assembly displaying register and memory values on terminal}
+      {Parses and compiles the 8085 assembly, and runs generated instructions in the virtual machine whose registers and memory arena can be displayed on the terminal, allowing step-wise execution}
+
+    \resumeSubItem
+      {Music GenAI}
+      {Developed virtual synth pad as HCI interface to get human inputs which is used along with the database of classical music to synthesize new melodies using genetic algorithms and selection strategies}
   \resumeSubHeadingListEnd
 
 
-%--------Academic Awards------------
-\section{Awards}
- \resumeSubHeadingListStart
-   \resumeSubItemOneliner{\textbf{Best paper} award for the research paper presented at the IEEE IC3SIS'22 conference}{}
-
-   \resumeSubItemOneliner{Alumni Association Award for being the \textbf{student topper} in freshman year}{}
-
-    \resumeSubItemOneliner{\textbf{Second Runner-up} at the 2021 Indian National Academy of Engineering Youth Conclave}{}
- \resumeSubHeadingListEnd
-
-
-% %--------Extracurriculars------------
-% \section{Extracurriculars}
-%  \resumeSubHeadingListStart
-%    \resumeSubItemOneliner{Member of athletics, chess and music clubs}{}
-%  \resumeSubHeadingListEnd
+%-------------------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem
+      {Languages}
+      {C/C++, Python, Go, TypeScript, JS/CSS/HTML, Bash, SQL, \LaTeX}
+      
+    \resumeSubItem
+      {Technologies}
+      {Kubernetes, Docker, AWS S3, PyTorch, Pandas, MERN, Svelte, Flask}
+      
+    \resumeSubItem
+      {Tools}
+      {Git, ASan, GDB, Pstack, Poor Man's Profiler, K9s, Nginx, Selenium, Linux utilities}
+  \resumeSubHeadingListEnd
 
  
 %-------------------------------------------
 \end{document}
-
