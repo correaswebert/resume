@@ -9,7 +9,14 @@
 \usepackage{enumitem}
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
 
+\makeatletter
+\newcommand{\github}[1]{%
+   \href{#1}{\faGithubSquare}%
+}
+\makeatother
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -166,21 +173,20 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem
-      {Ext2 for xv6 OS}
-      {Created a secondary file system for MIT's xv6 OS usable alongside its primary one, updated drivers to use slave bus, developed a Virtual File System, added kernel syscalls and user-end API}
+    \point
+      {\textbf{Ext2 for xv6 OS} \github{https://gitlab.com/correaswebert/xv6-ext2} Created a secondary file system for MIT's xv6 OS usable alongside its primary one, updated drivers to use slave bus, developed a Virtual File System, added kernel syscalls and user-end API}
       
-    \resumeSubItem
-      {BitTorrent Client}
-      {Downloads and uploads files to the network showing the ongoing file and network statistics, implemented algorithms like optimistic unchoking, rarest piece first, and endgame mode}
+    \point
+      {\textbf{BitTorrent Client} \github{https://github.com/JinitSan/Bittorrent-Client}
+      Downloads and uploads files to the network showing the ongoing file and network statistics, implemented algorithms like optimistic unchoking, rarest piece first, and endgame mode}
       
-    \resumeSubItem
-      {Intel 8085 Emulator}
-      {Parses and compiles the 8085 assembly, and runs generated instructions in the virtual machine whose registers and memory arena can be displayed on the terminal, allowing step-wise execution}
+    \point
+      {\textbf{Intel 8085 Emulator} \github{https://github.com/correaswebert/intel-8085-emulator}
+      Parses and compiles the 8085 assembly, and runs generated instructions in a virtual machine whose registers and memory arena can be displayed on a terminal, allowing step-wise execution}
 
-    \resumeSubItem
-      {Music GenAI}
-      {Developed virtual synth pad as HCI interface to get human inputs which is used along with the database of classical music to synthesize new melodies using genetic algorithms and selection strategies}
+    \point
+      {\textbf{Music GenAI} \github{https://github.com/correaswebert/musigen}
+      Developed virtual synth pad as HCI interface to get human inputs which is used along with the database of classical music to synthesize new melodies using genetic algorithms and selection strategies}
   \resumeSubHeadingListEnd
 
 
