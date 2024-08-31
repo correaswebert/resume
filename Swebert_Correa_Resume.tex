@@ -1,3 +1,10 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
@@ -69,6 +76,15 @@
     \end{tabular*}\vspace{-5pt}
 }
 
+\newcommand{\educationInfo}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}
+    \textit{\small#5}\vspace{-5pt}
+}
+
 \newcommand{\resumeSubItemOneliner}[2]{
   \item{
     {#1 \vspace{-4pt}}
@@ -96,8 +112,8 @@
 \href{https://www.linkedin.com/in/correaswebert}{linkedin.com/in/correaswebert}\\
 
 \href{mailto:correaswebert@gatech.edu}{correaswebert@gatech.edu}
-% $\cdot$
-% \href{tel:+919702275586}{(+91) 970-227-5586}
+$\cdot$
+\href{tel:4706851680}{(470) 685-1680}
 \hfill
 \href{https://github.com/correaswebert}{github.com/correaswebert}
 
@@ -106,16 +122,19 @@
 \section{Education}
 
   \resumeSubHeadingListStart
-    \resumeSubheading
+    \educationInfo
       {Georgia Institute of Technology}{Atlanta, Georgia}
       {Master of Science in Computer Science}{Aug 2024 - May 2026}
+      {Coursework: Computer Networks, Machine Learning, Securing the Internet Infrastructure \\
+      Graduate Teaching Assistant in Natural Language Processing}
   \resumeSubHeadingListEnd
 
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {College of Engineering, Pune}{Pune, India}
+    \educationInfo
+      {College of Engineering, Pune (COEP)}{Pune, India}
       {Bachelor of Technology in Computer Engineering; 
       GPA: 9.05/10.0}{Aug 2018 - Oct 2022}
+      {Coursework: Operating Systems, Distributed Systems, Computer Networks, Database Systems, Compilers}
   \resumeSubHeadingListEnd
 
 
@@ -160,16 +179,6 @@
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-
-%-----------Publication-----------------
-\section{Publication}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Human-Computer Music Co-Production Using Genetic Algorithms}{IEEE 2022}
-      {International Conference on Computing, Communication, Security and Intelligent Systems}{Best Paper Award}
-  \resumeSubHeadingListEnd
-
-
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
@@ -186,7 +195,9 @@
 
     \point
       {\textbf{Music GenAI} \github{https://github.com/correaswebert/musigen}
-      Developed virtual synth pad as HCI interface to get human inputs which is used along with the database of classical music to synthesize new melodies using genetic algorithms and selection strategies}
+      Developed virtual synth pad as HCI interface to get human inputs which is used along with the database of classical music to synthesize new melodies using genetic algorithms and selection strategies \\
+      Publication: Human-Computer Music Co-Production Using Genetic Algorithms} at \textit{IEEE 2022 International Conference on Computing, Communication, Security and Intelligent Systems} winning \textbf{Best Paper Award}
+      
   \resumeSubHeadingListEnd
 
 
@@ -203,7 +214,7 @@
       
     \resumeSubItem
       {Tools}
-      {Git, ASan, GDB, Pstack, Poor Man's Profiler, K9s, Nginx, Selenium, Linux utilities}
+      {Git, ASan, GDB, Pstack, Poor Man's Profiler, K9s, Nginx, Postgres, Linux utilities}
   \resumeSubHeadingListEnd
 
  
