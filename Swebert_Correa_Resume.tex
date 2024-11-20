@@ -58,8 +58,8 @@
   }
 }
 
-\newcommand{\point}[1]{
-    \item{#1} 
+\newcommand{\resumePoint}[1]{
+    \item{#1} \vspace{-2pt}
 }
 
 \newcommand{\resumeItemSpecial}[2]{
@@ -74,6 +74,12 @@
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\projectSubheading}[2]{
+  \vspace{-1pt}\item
+  \textbf{#1} $\mid$ \textit{#2}
+  \vspace{-5pt}
 }
 
 % college, place, degree, year, course
@@ -97,31 +103,17 @@
 \renewcommand{\labelitemii}{$\circ$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-3pt}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
-%----------HEADING-----------------
-{\Large \textbf{Swebert Correa}}
-\hfill
-\href{https://www.linkedin.com/in/correaswebert}{linkedin.com/in/correaswebert}\\
+\input{header}
 
-\href{mailto:correaswebert@gatech.edu}{correaswebert@gatech.edu}
-$\cdot$
-\href{tel:4706851680}{(470) 685-1680}
-\hfill
-\href{https://github.com/correaswebert}{github.com/correaswebert}
-
-
-%-----------EDUCATION-----------------
 \section{Education}
-
   \resumeSubHeadingListStart
     \educationInfo
       {Georgia Institute of Technology}{Atlanta, Georgia}
@@ -135,11 +127,11 @@ $\cdot$
       {College of Engineering, Pune (COEP)}{Pune, India}
       {Bachelor of Technology in Computer Engineering; 
       GPA: 9.05/10.0}{Aug 2018 - Oct 2022}
-      {Coursework: Operating Systems, Distributed Systems, Computer Networks, Database Systems, Compilers}
+      {Coursework: Distributed Systems, Operating Systems, Computer Networks, Database Systems, Artificial Intelligence}
   \resumeSubHeadingListEnd
 
+% ------------------------------------------------------------
 
-%-----------EXPERIENCE-----------------
 \section{Experience}
     \resumeSubHeadingListStart
 
@@ -147,80 +139,98 @@ $\cdot$
       {Rakuten Symphony}{Pune, India}
       {Associate Software Engineer}{Jun 2022 - Jul 2024}
       \resumeItemListStart
-        \resumeItem{Resync and Rebuild}
-        {Led the data recovery subsystem, designed and developed data rebuild and resync, along with integrating erasure-coding in data path and creating disk-sets in control path}
+        \resumeItem{Data Rebuild and Resync}
+        {Led the design and development of data recovery subsystem for object storage by integrating erasure-coding, creating disk-sets and scanning thousands of files across disks}
 
         \resumeItem{Server-Side Encryption}
         {Engineered the mechanism to encrypt objects at rest using the customer-\\provided key, without disrupting replication of the erasure-coded objects across heterogeneous sites}
 
         \resumeItem{Cluster Manager}
-        {Co-developed with team-lead to manage data and metadata stores, and gateways}
+        {Co-developed the event-loop based orchestrator service of object storage with team-lead to manage the life-cycle of different services like data and metadata stores, and gateways}
 
-        \resumeItem{Micro-service Diagnostic Utility}
-        {Added a feature to the diagnostic toolkit to determine the number of in-flight IOs on all the distributed volume managers of the block storage using pub/sub model}
+        \resumeItem{Backup and Garbage Collection}
+        {Resolved memory and reference leaks in differential snapshots}
+
+        \resumeItem{Microservice Diagnostic Utility}
+        {Collated data from various microservices to determine the in-flight IO operations on all distributed volume managers of the cloud native block storage via pub/sub model}
       \resumeItemListEnd
 
     \vspace{3pt}
 
     \resumeSubheading
       {Citi Bank}{Pune, India}
-      {Techincal Summer Analyst}{May 2021 - Jul 2021}
+      {Technical Summer Analyst}{May 2021 - Jul 2021}
       \resumeItemListStart
         \resumeItem{DevOps}
-        {Helped in creating a continuous integration pipeline using PowerShell along with some internal tools, allowing to obtain test results emailed to all the stakeholders with a single click}
-      \resumeItemListEnd
+        {Aided in creating a continuous integration pipeline using PowerShell along with some internal tools, allowing to obtain test results emailed to all the stakeholders with a single click}
 
-    \vspace{3pt}
-
-    \resumeSubheading
-      {COEP Impressions Cultural Fest}{Pune, India}
-      {Technical Head}{May 2020 - Jun 2021}
-      \resumeItemListStart
-        \point{Handled the domain registration and administrated the subdomains and SSL using Let's Encrypt}
-
-        \point{Developed optimized website using NextJS, MongoDB and AWS S3 with image and video submissions}
-
+        \resumeItem{Optimization}
+        {Leveraged various wait strategies to achieve a 5x reduction in code runtime}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------------
+% ------------------------------------------------------------
+
 \section{Projects}
-  \resumeSubHeadingListStart
-    \point
-      {\textbf{Ext2 for xv6 OS} \github{https://gitlab.com/correaswebert/xv6-ext2} Created a secondary file system for MIT's xv6 OS usable alongside its primary one, updated drivers to use slave bus, developed a Virtual File System, added kernel syscalls and user-end API}
-      
-    \point
-      {\textbf{BitTorrent Client} \github{https://github.com/JinitSan/Bittorrent-Client}
-      Downloads and uploads files to the network showing the ongoing file and network statistics, implemented algorithms like optimistic unchoking, rarest piece first, and endgame mode}
-      
-    \point
-      {\textbf{Intel 8085 Emulator} \github{https://github.com/correaswebert/intel-8085-emulator}
-      Parses and compiles the 8085 assembly, and runs generated instructions in a virtual machine whose registers and memory arena can be displayed on a terminal, allowing step-wise execution}
+    \resumeSubHeadingListStart
+        % \projectSubheading
+        % {Mini Internet}
+        % {Computer Networks, Free Range Routing}
+        % \resumeItemListStart
+        %     \resumePoint{Managed router interface subnet assignments, enabling efficient IP addressing and network segmentation}
+        %     \resumePoint{Administrated OSPF and BGP for dynamic routing; applied BGP policies for customers/providers/peers}
+        %     \resumePoint{Incorporated RPKI and ROV filtering to safe-guard our AS; conducted BGP hijacks on other ASes}
+        % \resumeItemListEnd
 
-    \point
-      {\textbf{Music GenAI} \github{https://github.com/correaswebert/musigen}
-      Developed virtual synth pad as HCI interface to get human inputs which is used along with the database of classical music to synthesize new melodies using genetic algorithms and selection strategies \\
-      \textbf{Publication}: Human-Computer Music Co-Production Using Genetic Algorithms} at \textit{IEEE 2022 International Conference on Computing, Communication, Security and Intelligent Systems} winning \textbf{Best Paper Award}
-      
+        \projectSubheading
+        {Ext2 File System for MIT xv6 OS}
+        {Operating Systems, C}
+        \resumeItemListStart
+            \resumePoint{Developed Ext2 file system, implementing buffer cache management, tree-based searching and logging}
+            \resumePoint{Updated ATA interface driver to utilize the secondary bus to enable data transfer with the Ext2 disk}
+            \resumePoint{Implemented a Virtual File System with new file-system APIs, updating corresponding syscalls}
+        \resumeItemListEnd
+
+        \projectSubheading
+        {Intel 8085 Simulator}
+        {Compilers, C}
+        \resumeItemListStart
+            \resumePoint{Implemented an assembler to compile the 8085 assembly instructions into machine code}
+            \resumePoint{Developed a virtual processor to simulate the ISA and run the machine code with step-wise execution}
+            \resumePoint{Created a ncurses terminal UI to display the contents of registers and selected memory-arena}
+        \resumeItemListEnd
+
+        \projectSubheading
+        {Music GenAI}
+        {Machine Learning, Python, Svelte}
+        \resumeItemListStart
+            \resumePoint{Implemented a genetic algorithm to generate new melody variations based on prior inputs and dataset}
+            \resumePoint{Devised a model to calculate fitness score based on user's previous acceptances and rejections}
+            \resumePoint{Developed virtual synth pad as HCI interface for  translating the genomes to and from human format}
+        \resumeItemListEnd
+
   \resumeSubHeadingListEnd
 
+% ------------------------------------------------------------
 
-%-------------------------
+\section{Publication}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {Human-Computer Music Co-Production Using Genetic Algorithms}{Best Paper Award}
+        {IEEE International Conference on Computing, Communication, Security and Intelligent Systems}{2022}
+    \resumeSubHeadingListEnd
+
+% ------------------------------------------------------------
+
 \section{Skills}
   \resumeSubHeadingListStart
     \resumeSubItem
       {Languages}
-      {C/C++, Python, TypeScript, JS/CSS/HTML, Bash, SQL, \LaTeX}
+      {C, C++, Python, Java, Go, x86 Assembly, TypeScript, Bash (Linux Shell Scripting), SQL}
       
     \resumeSubItem
       {Technologies}
-      {Kubernetes, Docker, AWS S3, Postgres, Numpy, Pandas, MERN, Svelte, Flask}
-      
-    \resumeSubItem
-      {Tools}
-      {Git, ASan, GDB, Pstack, Make, Poor Man's Profiler, K9s, Nginx, Linux utilities}
+      {Kubernetes, Docker, Postgres, GDB, Valgrind, Nginx, React, Flask, Numpy, PyTorch, AWS}
   \resumeSubHeadingListEnd
 
- 
-%-------------------------------------------
 \end{document}
