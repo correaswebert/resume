@@ -1,0 +1,257 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+\makeatletter
+\newcommand{\github}[1]{%
+   \href{#1}{\faGithubSquare}%
+}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.525in}
+\addtolength{\evensidemargin}{-0.175in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{4.08003pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{: #2 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumePoint}[1]{
+    \item{#1} \vspace{-2pt}
+}
+
+\newcommand{\resumeItemSpecial}[2]{
+  \item{
+    \textbf{#1} at \textit{#2} \hfill \vspace{-4pt}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\projectSubheading}[2]{
+  \vspace{-1pt}\item
+  \textbf{#1} $\mid$ \textit{#2}
+  \vspace{-5pt}
+}
+
+% college, place, degree, year, course
+\newcommand{\educationInfo}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}
+    \textit{\small#5}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItemOneliner}[2]{
+  \item{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+
+\begin{document}
+
+{\Large \textbf{Swebert Correa}}
+\hfill
+\href{https://www.linkedin.com/in/correaswebert}{linkedin.com/in/correaswebert}\\
+
+\href{mailto:correaswebert@gatech.edu}{correaswebert@gatech.edu}
+$\cdot$
+\href{tel:4706851680}{(470) 685-1680}
+$\cdot$
+Atlanta, GA 30363
+\hfill
+\href{https://github.com/correaswebert}{github.com/correaswebert}
+
+% ------- ------- ------- %
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \educationInfo
+      {Georgia Institute of Technology}{Atlanta, Georgia}
+      {Master of Science in Computer Science}{Aug 2024 - May 2026}
+      {Coursework: Machine Learning, Advanced Database Systems, Securing the Internet Infrastructure, Computer Networks \\
+      Graduate Teaching Assistant for Natural Language Processing}
+  \resumeSubHeadingListEnd
+
+  \resumeSubHeadingListStart
+    \educationInfo
+      {College of Engineering, Pune (COEP)}{Pune, India}
+      {Bachelor of Technology in Computer Engineering; 
+      GPA: 9.05/10.0}{Aug 2018 - Oct 2022}
+      {Coursework: Artificial Intelligence, Data Science, Database Systems, Distributed Systems, Statistics for Finance}
+  \resumeSubHeadingListEnd
+
+% ------- ------- ------- %
+
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem
+      {Languages}
+      {Python, C, C++, TypeScript, JavaScript, Go (Golang), SQL, Bash (Linux Shell Scripting)}
+
+    \resumeSubItem
+    {Frameworks}
+    {Django, Conjure, JAX, PyTorch, TensorFlow, HuggingFace, Spark, Flink, Kafka}
+
+    \resumeSubItem
+    {Tools}
+    {Elasticsearch, Prometheus, Grafana, Jenkins, CircleCI, Git, Jupyter, Postgres, Plotly}
+
+    \resumeSubItem
+    {Platforms}
+    {Kubernetes, Docker, AWS, GCP, RHEL, Fedora, Debian, Ubuntu}
+  \resumeSubHeadingListEnd
+
+% ------- ------- ------- %
+
+\section{Projects}
+    \resumeSubHeadingListStart
+        \projectSubheading
+        {Music Generation AI}
+        {Genetic Algorithms}
+        \resumeItemListStart
+            \resumePoint
+            {Implemented a genetic algorithm to generate new melody variations based on prior inputs and dataset}
+
+            \resumePoint
+            {Devised a model to calculate fitness score based on user's previous acceptances and rejections}
+            
+            \resumePoint
+            {Developed virtual synth pad as HCI interface for  translating the genomes to and from human format}
+
+        \resumeItemListEnd
+        
+        \projectSubheading
+        {Multimodal Conversational Agent with RAG}
+        {Large Language Models}
+        \resumeItemListStart
+            \resumePoint
+            {Built multimodal chatbot using LLMs with a RAG pipeline powered by Veaviate vector DB for context}
+
+            \resumePoint
+            {Fine-tuned using LoRA and optimized dialogue quality with reinforcement learning for 92\% user rating}
+
+            \resumePoint
+            {Deployed the system using docker and integrated Ollama for scalable multimodal interactions}
+        \resumeItemListEnd
+
+        \projectSubheading
+        {Multi-Task Vision System for Image Recognition and Synthesis}
+        {Computer Vision}
+        \resumeItemListStart
+            \resumePoint
+            {Used YOLO for real-time object detection and ViT/CLIP for multimodal classification with 95\% accuracy.}
+
+            \resumePoint
+            {Developed a GAN-based module for generating high-quality, photorealistic images and augmenting datasets}
+
+            \resumePoint
+            {Optimized feature extraction with CNN mixture models and integrated OpenCV for real-time processing}
+        \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+% ------- ------- ------- %
+
+\section{Publication}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {Human-Computer Music Co-Production Using Genetic Algorithms}{Best Paper Award}
+        {IEEE International Conference on Computing, Communication, Security and Intelligent Systems}{2022}
+    \resumeSubHeadingListEnd
+
+% ------- ------- ------- %
+
+\section{Experience}
+    \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Rakuten Symphony}{Pune, India}
+      {Associate Software Engineer}{Jun 2022 - Jul 2024}
+      \resumeItemListStart
+        \resumeItem{Metadata Management}
+        {Strategically maintained and scanned millions of rows for life-cycle management, finding missing chunks, performing RBAC, etc. utilising means like stored procedures.}
+
+        \resumeItem{Cluster Manager}
+        {Co-developed the orchestrator service with team-lead which included creating heuristic algorithms to predict the upcoming load on service fleet and allocate resources accordingly}
+
+        \resumeItem{Micro-service Diagnostic Utility}
+        {Collated data from various micro-services to determine the number of in-flight IOs on all the distributed volume managers of the block storage using pub/sub model}
+      \resumeItemListEnd
+
+    \vspace{3pt}
+
+    \resumeSubheading
+      {Citi Bank}{Pune, India}
+      {Technical Summer Analyst}{May 2021 - Jul 2021}
+      \resumeItemListStart
+        \resumeItem{DevOps}
+        {Created CI/CD pipeline using PowerShell to email results to all stakeholders with single click}
+
+        \resumeItem{Optimization}
+        {Leveraged various wait strategies to achieve a 5x reduction in runtime from 30min to 6min}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\end{document}
