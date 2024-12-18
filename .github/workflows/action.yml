@@ -6,15 +6,38 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: Swebert_Correa_Resume.tex
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          work_in_root_file_dir: true
+          root_file: systems/Swebert_Correa_Resume.tex
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          work_in_root_file_dir: true
+          root_file: ml/Swebert_Correa_Resume.tex
+
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
           name: PDF
           path: Swebert_Correa_Resume.pdf
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: systems/Swebert_Correa_Resume.pdf
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: ml/Swebert_Correa_Resume.pdf
+
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
