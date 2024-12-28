@@ -45,7 +45,7 @@ jobs:
       - name: Upload networks resume
         uses: actions/upload-artifact@v4
         with:
-          name: ML
+          name: Networks
           path: networks/Swebert_Correa_Resume.pdf
 
       - name: Deploy to Github Pages
