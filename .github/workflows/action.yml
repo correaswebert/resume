@@ -24,7 +24,7 @@ jobs:
       - name: Upload compiled resume
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.resume_type | title }}
+          name: ${{ matrix.resume_type }}
           path: ${{ matrix.resume_type }}/Swebert_Correa_Resume.pdf
 
   deploy:
