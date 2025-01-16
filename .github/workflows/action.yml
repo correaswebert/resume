@@ -30,6 +30,19 @@ jobs:
           name: ${{ matrix.resume_type }}
           path: ${{ matrix.resume_type }}/Swebert_Correa_Resume.pdf
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build_latex
+
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: resumes
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
@@ -37,6 +50,6 @@ jobs:
           BRANCH: gh-pages
           CLEAN: true
           SINGLE_COMMIT: true
-          FOLDER: .
+          FOLDER: resumes
           GIT_CONFIG_NAME: Swebert Correa
           GIT_CONFIG_EMAIL: correaswebert@gmail.com
