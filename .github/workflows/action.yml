@@ -3,52 +3,38 @@ on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        resume_type:
+          - generic
+          - systems
+          - ml
+          - networks
+          - backend
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
 
-      - name: Compile generic resume
+      - name: Compile LaTeX resume
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: Swebert_Correa_Resume.tex
-      - name: Compile systems resume
-        uses: xu-cheng/latex-action@v3
-        with:
+          root_file: ${{ matrix.resume_type }}/Swebert_Correa_Resume.tex
           work_in_root_file_dir: true
-          root_file: systems/Swebert_Correa_Resume.tex
-      - name: Compile ml resume
-        uses: xu-cheng/latex-action@v3
-        with:
-          work_in_root_file_dir: true
-          root_file: ml/Swebert_Correa_Resume.tex
-      - name: Compile networks resume
-        uses: xu-cheng/latex-action@v3
-        with:
-          work_in_root_file_dir: true
-          root_file: networks/Swebert_Correa_Resume.tex
 
-      - name: Upload generic resume
+      - name: Upload compiled resume
         uses: actions/upload-artifact@v4
         with:
-          name: Generic
-          path: Swebert_Correa_Resume.pdf
-      - name: Upload systems resume
-        uses: actions/upload-artifact@v4
-        with:
-          name: Systems
-          path: systems/Swebert_Correa_Resume.pdf
-      - name: Upload ml resume
-        uses: actions/upload-artifact@v4
-        with:
-          name: ML
-          path: ml/Swebert_Correa_Resume.pdf
-      - name: Upload networks resume
-        uses: actions/upload-artifact@v4
-        with:
-          name: Networks
-          path: networks/Swebert_Correa_Resume.pdf
+          name: ${{ matrix.resume_type | title }}
+          path: ${{ matrix.resume_type }}/Swebert_Correa_Resume.pdf
 
-      - name: Deploy to Github Pages
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build_latex
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
