@@ -1,0 +1,246 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+
+\makeatletter
+\newcommand{\github}[1]{%
+   \href{#1}{\faGithubSquare}%
+}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.525in}
+\addtolength{\evensidemargin}{-0.175in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{4.08003pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \begin{justify}
+    \textbf{#1}{: #2 \vspace{-1pt}}
+    \end{justify}
+  }
+}
+
+\newcommand{\resumePoint}[1]{
+    \item{#1} \vspace{-2pt}
+}
+
+\newcommand{\resumeItemSpecial}[2]{
+  \item{
+    \textbf{#1} at \textit{#2} \hfill \vspace{-4pt}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\projectSubheading}[2]{
+  \vspace{-1pt}\item
+  \textbf{#1} $\mid$ \textit{#2}
+  \vspace{-5pt}
+}
+
+\newcommand{\projectSubheadingLinked}[3]{
+  \vspace{-1pt}\item
+  \textbf{#1} $\mid$ \textit{#2} $\mid$ \href{#3}{Link}
+  \vspace{-5pt}
+}
+
+% college, place, degree, year, course
+\newcommand{\educationInfo}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}
+    \textit{\small#5}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItemOneliner}[2]{
+  \item{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+
+\begin{document}
+
+
+{\Large \textbf{Swebert Correa}}
+\hfill
+\href{https://www.linkedin.com/in/correaswebert}{linkedin.com/in/correaswebert}\\
+
+\href{mailto:correaswebert@gatech.edu}{correaswebert@gatech.edu}
+$\cdot$
+\href{tel:4706851680}{(470) 685-1680}
+$\cdot$
+Atlanta, GA
+\hfill
+\href{https://github.com/correaswebert}{github.com/correaswebert}
+
+% ------- ------- ------- %
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \educationInfo
+      {Georgia Institute of Technology}{Atlanta, Georgia}
+      {Master of Science in Computer Science; 
+      GPA: 4.0/4.0}{Aug 2024 - May 2026}
+      {Coursework: Distributed Computing, Database Implementation, Computer Networks, Machine Learning \\
+      Specializing in Computing Systems; \underline{Graduate Teaching Assistant} for NLP}
+  \resumeSubHeadingListEnd
+
+  \resumeSubHeadingListStart
+    \educationInfo
+      {College of Engineering, Pune (COEP)}{Pune, India}
+      {Bachelor of Technology in Computer Engineering; 
+      GPA: 9.05/10.0}{Aug 2018 - Oct 2022}
+      {Coursework: Operating Systems, Distributed Systems, Computer Networks, Database Systems, Compilers}
+  \resumeSubHeadingListEnd
+
+% ------- ------- ------- %
+
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem
+      {Languages}
+      {Javascript, Python, Go, Java, C, C++, Bash (Linux Shell Scripting), SQL}
+      
+    \resumeSubItem
+      {Technologies}
+      {Kubernetes, Docker, MySQL, PostgreSQL, MongoDB, AWS, Azure, GCP, NextJS, React, Svelte, Django, Fast API, Nginx, Electron, Material UI, Bootstrap, Tailwind, Numpy, Git, Jira, Jenkins}
+      
+    % \resumeSubItem
+    %   {Domains}
+    %   {Distributed Systems, File Systems and Storage, Operating Systems, Networking, Compilers}
+  \resumeSubHeadingListEnd
+
+% ------- ------- ------- %
+
+\section{Experience}
+    \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Rakuten Symphony}{Pune, India}
+      {Associate Software Engineer $\mid$ C/C++, Python, Kubernetes, PostgreSQL}{Jun 2022 - Jul 2024}
+      \resumeItemListStart
+        \resumePoint{Engineered an in-house object storage system delivering $\sim 70\%$ feature parity with AWS S3}
+
+        \resumeItem{HTTP Streaming Server}
+        {Developed an asynchronous event-based streaming HTTP server in C to provide object store REST APIs like GetObject, PutObject, etc. while handling MIME and URL encoding}
+
+        \resumeItem{Dynamic Certificate Management}
+        {Created a mechanism to periodically generate TLS certificates and injected them into Kubernetes secrets pulled by gateways and updated custom certificate authority server}
+
+        \resumeItem{Server-Side Encryption}
+        {Engineered the mechanism to encrypt objects at rest using the customer-provided key, without disrupting active-active replication of the erasure-coded objects across heterogeneous sites}
+
+        \resumeItem{Cluster Manager}
+        {Collaborated with team lead to implement RPC-based orchestrator featuring a custom event loop enabling microservice lifecycle management such as data servers, metadata servers and gateways}
+
+        \resumeItem{Microservice Diagnostic Utility}
+        {Collated data from various microservices to determine the in-flight IO operations on all distributed volume managers of the cloud native block storage via pub/sub model}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Citi Bank}{Pune, India}
+      {Technical Summer Analyst}{May 2021 - Jul 2021}
+      \resumeItemListStart
+        \resumeItem{DevOps}
+        {Created CI/CD pipeline using PowerShell to email results to all stakeholders with single click}
+
+        \resumeItem{Optimization}
+        {Leveraged various wait strategies in Selenium for 5x runtime reduction from 30min to 6min}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+% ------- ------- ------- %
+
+\section{Projects}
+    \resumeSubHeadingListStart
+
+        \projectSubheadingLinked
+        {Computer Society of India}
+        {React, MongoDB, TypeScript, Docker, Nginx}
+        {https://csi.coep.org.in}
+        \resumeItemListStart
+            \resumePoint{Led a team of 6 students to build a new full-stack platform using the MERN stack, Material UI and Nginx}
+            \resumePoint{Deployed the platform on college servers with Docker and managed application processes using PM2}
+        \resumeItemListEnd
+
+        \projectSubheadingLinked
+        {Music GenAI Synthpad}
+        {JavaScript, Svelte, Python, FastAPI, Amazon EC2}
+        {https://synthpad.swebert.xyz/?dataUrl=180-150-120-140-180-100-101-100-major-150  }
+        \resumeItemListStart
+            \resumePoint{Created a GenAI using genetic algorithms to generate music on a FastAPI backend hosted on AWS EC2}
+            \resumePoint{Developed virtual synth pad as HCI interface to visualize and interact with the genomes as musical notes}
+        \resumeItemListEnd
+
+        \projectSubheading
+        {BitTorrent Desktop Client}
+        {Python, JavaScript, Electron, Flask}
+        \resumeItemListStart
+            \resumePoint{Implemented BitTorrent protocol in pure Python, including peer discovery with HTTP/UDP based tracker}
+            \resumePoint{Built a Flask backend to interface with an Electron desktop application, enabling file download initiation and real-time visualization of statistics for downloads, uploads, network activity, and connections}
+        \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\end{document}
+
