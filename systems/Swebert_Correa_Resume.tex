@@ -179,7 +179,7 @@ Atlanta, GA 30363
         {Developed an asynchronous event-based streaming HTTP server in C to provide object store REST APIs like GetObject, PutObject, etc. while handling MIME and URL encoding}
 
         \resumeItem{Data Integrity and Recovery}
-        {Efficiently scanned thousands of files across hundreds of disks to regenerate data lost due to failures or partitions by employing erasure-coding and storing files intelligently on disk-sets}
+        {Efficiently scanned thousands of files across hundreds of disks to regenerate data lost due to failures or partitions by employing erasure-coding and load balancing with disk-sets}
 
         \resumeItem{Server-Side Encryption}
         {Engineered the mechanism to encrypt objects at rest using the customer-provided key, without disrupting active-active replication of the erasure-coded objects across heterogeneous sites}
@@ -230,7 +230,7 @@ Atlanta, GA 30363
         {BitTorrent Desktop Client}
         {Computer Networks, Python, ElectronJS}
         \resumeItemListStart
-            \resumePoint{Implemented BitTorrent protocol in pure Python, including peer discovery with HTTP/UDP based tracker}
+            \resumePoint{Implemented BitTorrent protocol in pure Python, including peer discovery with TCP \& UDP based tracker}
             \resumePoint{Built an Electron desktop application, enabling file download initiation and data visualization of statistics}
         \resumeItemListEnd
 
