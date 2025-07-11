@@ -121,7 +121,7 @@
 
 \href{mailto:correaswebert@gatech.edu}{correaswebert@gatech.edu}
 $\cdot$
-\href{tel:4706851680}{(470) 685-1680}
+\href{tel:+1-470-685-1680}{(470) 685-1680}
 $\cdot$
 Atlanta, GA 30363
 \hfill
@@ -153,7 +153,7 @@ Atlanta, GA 30363
   \resumeSubHeadingListStart
     \resumeSubItem
       {Languages}
-      {C, C++, Python, CUDA, Java, Go, x86 Assembly, Javacript, Bash (Linux Shell Scripting), SQL}
+      {C, C++, Python, CUDA, Java, Kotlin, Go, x86 Assembly, JavaScript, Bash Shell Scripting, SQL}
       
     \resumeSubItem
       {Technologies}
@@ -166,6 +166,26 @@ Atlanta, GA 30363
     \resumeSubHeadingListStart
 
     \resumeSubheading
+      {Amazon (Alexa Domains)}{Seattle, WA}
+      {Software Development Engineer Internship $\mid$ Kotlin, Dagger, Fargate, DynamoDB}{May 2025 - Aug 2025}
+      \resumeItemListStart
+        \resumeItem{Notification Service}
+        {Redesigned real-time service handling 150+ TPS to support guided AI device setup in Alexa Plus increasing render rate from 3.84\% to over 50\% by unifying both push and pull mechanisms}
+
+        \resumeItem{Onboarding Simplification}
+        {Reduced overhead for sending different notification types by enabling services to integrate with a single microservice instead of more than five, saving about two weeks of onboarding time}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Physical Internet Center Lab (Prof. Benoit Montreuil)}{Atlanta, GA}
+      {Graduate Student Researcher $\mid$ PostgreSQL, Python}{Jan 2025 - May 2025}
+      \resumeItemListStart
+        \resumePoint{Designed range and hash based partitioned tables using GiST indexes improving query time by about 4x}
+        \resumePoint{Fine-tuned PostgreSQL configurations for memory management, WAL, and parallel queries for OLAP}
+      \resumeItemListEnd
+
+    \resumeSubheading
       {Rakuten Symphony}{Pune, India}
       {Associate Software Engineer $\mid$ C/C++, Python, Kubernetes, PostgreSQL}{Jun 2022 - Jul 2024}
       \resumeItemListStart      
@@ -175,16 +195,11 @@ Atlanta, GA 30363
         {Developed an asynchronous event-based streaming HTTP server in C to provide object store REST APIs like GetObject, PutObject, etc. while handling MIME and URL encoding}
 
         \resumeItem{Data Integrity and Recovery}
-        {Efficiently scanned thousands of files across hundreds of disks to regenerate data lost due to failures or partitions by employing erasure-coding and load balancing with disk-sets}
+        {Efficiently scanned across terabytes of data on hundreds of disks to regenerate data lost due to failures or partitions by employing erasure-coding and load balancing with disk-sets}
 
         \resumeItem{Server-Side Encryption}
         {Engineered the mechanism to encrypt objects at rest using the customer-provided key, without disrupting active-active replication of the erasure-coded objects across heterogeneous sites}
 
-        \resumeItem{Cluster Manager}
-        {Collaborated with team lead to implement RPC-based orchestrator featuring a custom event loop enabling microservice lifecycle management such as data servers, metadata servers and gateways}
-
-        \resumeItem{Microservice Utility}
-        {Collated data from various microservices to determine the in-flight IO operations on all distributed volume managers of the cloud native block storage via pub/sub model}
       \resumeItemListEnd
 
     \vspace{3pt}
@@ -194,10 +209,7 @@ Atlanta, GA 30363
       {Technical Summer Analyst}{May 2021 - Jul 2021}
       \resumeItemListStart
         \resumeItem{DevOps}
-        {Created CI/CD pipeline using PowerShell to email results to all stakeholders with single click}
-
-        \resumeItem{Optimization}
-        {Leveraged various wait strategies in Selenium for 5x runtime reduction from 30min to 6min}
+        {Created CI/CD pipeline using PowerShell to email results reducing runtime from 30min to 6min}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -210,7 +222,6 @@ Atlanta, GA 30363
         {Operating Systems, C}
         \resumeItemListStart
             \resumePoint{Developed Ext2 file system, implementing buffer cache management, tree-based searching and logging}
-            \resumePoint{Updated ATA interface driver to utilize the secondary bus to enable data transfer with the Ext2 disk}
             \resumePoint{Implemented a Virtual File System with new file-system APIs, updating corresponding syscalls}
         \resumeItemListEnd
 
@@ -228,14 +239,6 @@ Atlanta, GA 30363
         \resumeItemListStart
             \resumePoint{Developed a thread-safe malloc family of functions replacement using both sbrk and mmap system calls}
             \resumePoint{Implemented segregated free-list and free space management algorithms like best-fit, worst-fit and first-fit}
-        \resumeItemListEnd
-
-        \projectSubheading
-        {External Sorting for Databases}
-        {Database Systems, C/C++}
-        \resumeItemListStart
-            \resumePoint{Leveraged offset-value codes and storage hierarchy to reduce column comparisons in a cache aware manner}
-            \resumePoint{Implemented k-way external merge sort using tournament-tree based tree-of-losers optimizing for scale}
         \resumeItemListEnd
 
   \resumeSubHeadingListEnd
