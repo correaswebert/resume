@@ -18,11 +18,18 @@
 \usepackage{fancyhdr}
 \usepackage{fontawesome5}
 \usepackage{hyperref}
-\usepackage{amsmath}
+\usepackage{ragged2e}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    filecolor=blue
+}
 
 \makeatletter
 \newcommand{\github}[1]{%
-   \href{#1}{\faGithubSquare}%
+   \href{#1}{\faGithub}%
 }
 \makeatother
 
@@ -39,7 +46,7 @@
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
-\urlstyle{same}
+% \urlstyle{same}
 
 \raggedbottom
 \raggedright
@@ -47,45 +54,135 @@
 \setlength{\footskip}{4.08003pt}
 
 % Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\Large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titleformat{\section}
+{\vspace{-5pt}\scshape\raggedright\Large}{}{0pt}{}
+[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeSubheadingTwoLiner}[4]{
-    \vspace{-1pt}
-    \item
-        \begin{tabular*}{0.99\textwidth}{l@{\extracolsep{\fill}}r}
-            \textbf{#1} & #2 \\
-                    #3  & #4
+
+\newcommand{\subsectionHeading}[4]{
+    % \vspace{-5pt}
+    \begin{itemize}[leftmargin=-10pt]
+    \item[]
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            #1 & #2 \\
+            #3 & #4 \\
         \end{tabular*}
+    \end{itemize}
+    \vspace{-10pt}
+}
+
+\newcommand{\subsectionListStart}{
+    \begin{itemize}[leftmargin=*]
+}
+\newcommand{\subsectionListEnd}{
+    \end{itemize}
     \vspace{-5pt}
 }
 
-\newcommand{\resumeSubheadingHeadingOneLiner}[2]{
-    \item
-    \begin{tabular*}{0.99\textwidth}{l@{\extracolsep{\fill}}r}
-        #1 & #2
-    \end{tabular*}
-    \vspace{-5pt}
+\newcommand{\titlePoint}[2]{
+    \item{
+        \begin{justify}
+            \textbf{#1}{: #2 \vspace{-1.5pt}}
+        \end{justify}
+    }
 }
 
-\newcommand{\resumeItem}[1]{
-  \item{#1}
+\newcommand{\point}[1]{
+    \item{#1} \vspace{-1.5pt}
 }
 
-\newcommand{\resumeSubItemSkills}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+% Education: college, date, degree, role, gpa
+\newcommand{\education}[5]{
+    \begin{itemize}[leftmargin=-10pt]
+    \item[]
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \textbf{#1} & #2 \\
+            #3; #4 & #5 \\
+        \end{tabular*}
+    \end{itemize}
+    \vspace{-15pt}
+}
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\courses}[1]{
+    \vspace{5pt}
+    \begin{itemize}[leftmargin=-10pt]
+    \item[]
+        \textbf{Coursework}: #1
+    \end{itemize}
+    \vspace{-10pt}
+}
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+% title, skills
+\newcommand{\skill}[2]{
+    \begin{itemize}[leftmargin=-10pt]
+    \item[]
+        \textbf{#1}: #2
+    \end{itemize}
+    \vspace{-12pt}
+}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=2pt, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=10pt]}
-\newcommand{\resumeItemListStartNoBullet}{\begin{itemize}[leftmargin=0pt, label={}]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-15pt}}
+% Experience: company, place, role, tech, date
+\newcommand{\experience}[5]{
+    \begin{itemize}[leftmargin=-10pt]
+    \item[]
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \uppercase{\textbf{#1}} & #2 \\
+            #3 $\mid$ #4 & #5 \\
+        \end{tabular*}
+    \end{itemize}
+    \vspace{-15pt}
+}
+
+\newcommand{\experienceStart}{
+    \begin{itemize}[leftmargin=0pt]
+}
+\newcommand{\experienceEnd}{
+    \end{itemize}
+    \vspace{-10pt}
+}
+
+% Research: project, prof link, prof name, place, role, tech, date
+\newcommand{\research}[7]{
+    \begin{itemize}[leftmargin=-10pt]
+    \item[]
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \textbf{#1} \textit{with} \href{#2}{#3} & #4 \\
+            #5 $\mid$ #6 & #7 \\
+        \end{tabular*}
+    \end{itemize}
+    \vspace{-15pt}
+}
+
+\newcommand{\researchStart}{
+    \begin{itemize}[leftmargin=0pt]
+}
+\newcommand{\researchEnd}{
+    \end{itemize}
+    \vspace{-10pt}
+}
+
+% Project: title, link, tech, date
+\newcommand{\project}[4]{
+    \begin{itemize}[leftmargin=-10pt]
+    \item[]
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \href{#2}{\textbf{#1}} $\mid$ #3 & #4 \\
+        \end{tabular*}
+    \end{itemize}
+    \vspace{-15pt}
+}
+
+\newcommand{\projectStart}{
+    \begin{itemize}[leftmargin=0pt]
+}
+\newcommand{\projectEnd}{
+    \end{itemize}
+    \vspace{-10pt}
+}
+
+\renewcommand{\labelitemii}{$\circ$}
 
 %-------------------------------------------
 
@@ -97,13 +194,13 @@
 
 \vspace{3pt}
 
-\href{https://www.linkedin.com/in/correaswebert}{linkedin.com/in/correaswebert}
+\href{https://www.linkedin.com/in/correaswebert}{linkedin}
 $\cdot$
-\href{mailto:correaswebert@gatech.edu}{correaswebert@gatech.edu}
+\href{mailto:correaswebert@gmail.com}{correaswebert@gmail.com}
 $\cdot$
 \href{tel:+14706851680}{(470) 685-1680}
 $\cdot$
-\href{https://github.com/correaswebert}{github.com/correaswebert}
+\href{https://github.com/correaswebert}{github}
 
 \end{center}
 
@@ -112,178 +209,152 @@ $\cdot$
 % ---
 
 \section{Education}
-\resumeSubHeadingListStart
 
-    \resumeSubheadingTwoLiner
+\subsectionListStart
+    \education
     {Georgia Institute of Technology, Atlanta}
     {Aug 2024 - May 2026}
-    {Master of Science in Computer Science $\mid$
-     Graduate Teaching Assistant}
+    {Master of Science in Computer Science}
+    {Graduate Teaching Assistant}
     {GPA: 4.0/4.0}
 
-    % ---
-
-    \resumeSubheadingTwoLiner
+    \education
     {College of Engineering, Pune}
-    {Aug 2018 - May 2022}
-    {Bachelor of Technology in Computer Engineering $\mid$
-     Minor in Financial Engineering} 
+    {Aug 2018 - Oct 2022}
+    {Bachelor of Technology in Computer Engineering}
+    {Minor in Financial Engineering} 
     {GPA: 9.05/10.0}
 
-    \resumeSubheadingHeadingOneLiner
-    {\textbf{Coursework:}
-     Advanced Operating Systems, Database Implementation, Distributed Computing, Networks}
-    {}
-
-\resumeSubHeadingListEnd
+    \courses
+    {Advanced Operating Systems, \small{GPU HW-SW}, Database Implementation, Distributed Computing}
+\subsectionListEnd
 
 % ---
 
 \section{Skills}
-\resumeItemListStartNoBullet
-    \resumeItem
-    {\textbf{Languages:}
-     C, C++, Python, CUDA, Java, Kotlin, Go (Golang), JavaScript, Bash, SQL}
 
-    \vspace{-5pt}
+\subsectionListStart
+    \skill
+    {Languages}
+    {C, C++, Python, CUDA, Rust, Go (Golang), x86 Assembly, Bash, SQL}
     
-    \resumeItem
-    {\textbf{Technologies:}
-     Kubernetes, Docker, PostgreSQL, DynamoDB, Coral, GDB, Strace, Nsight Git, Jenkins}
-\resumeItemListEnd
+    \skill
+    {Technologies}
+    {Kubernetes, Docker, PostgreSQL, DynamoDB, GDB, Strace, Nsight Git, Jenkins}
+
+    \skill
+    {Domains}
+    {Database Internals, Operating Systems, Parallel Programming, Kernel Optimization}
+\subsectionListEnd
 
 % ---
 
 \section{Experience}
-\resumeSubHeadingListStart
 
-    \resumeSubheadingTwoLiner
-    {\href{https://alexa.amazon.com}{\uppercase{\textbf{Amazon}}}}
+\subsectionListStart
+    
+    \experience
+    {\href{https://alexa.amazon.com}{Amazon}}
     {Seattle, WA}
-    {Software Development Engineer Intern $\mid$
-     Kotlin, Dagger, Coral, Fargate}
+    {Software Development Engineer Intern}
+    {Kotlin, Fargate, DynamoDB, SQS}
     {May 2025 - Aug 2025}
-    
-    \resumeItemListStart
-        \resumeItem
-        {Engineered a real-time notification service serving 150+ TPS for Alexa+ that enabled \href{https://www.aboutamazon.com/news/devices/new-alexa-plus-amazon-devices}{AI-guided device setup}}
+
+    \experienceStart
+        \point
+        {Engineered a real-time \href{https://www.aboutamazon.com/news/devices/new-alexa-plus-amazon-devices}{AI-guided device setup} notification service for Alexa+ handling \textbf{millions of DAU}}
+
+        \point
+        {Integrated multimodal \textbf{adaptive push/pull delivery} boosting render rate from 3.84\% to over 50\%}
         
-        \resumeItem
-        {Integrated \textbf{adaptive push/pull notification delivery} logic boosting render rate from 3.84\% to over 50\%}
-        
-        \resumeItem
+        \point
         {Saved 2 weeks ($5\times$ reduction in time) for each on-boarded service to send push, in-app and voice notifications}
-    \resumeItemListEnd
+    \experienceEnd
 
-    \vspace{10pt}
-    % ---
-
-    \resumeSubheadingTwoLiner
-    {\href{https://cloud.rakuten.com}{\uppercase{\textbf{Rakuten (Robin.io)}}}}
-    {Pune, India}
-    {Software Engineer $\mid$
-     C, Python, Kubernetes, PostgreSQL}
-    {Jun 2022 - Jul 2024}
-
-    \resumeItemListStart
-        \resumeItem
-        {Built an \href{https://cloud.rakuten.com/blogs/a-next-generation-approach-to-object-storage-edge-ai-cost-and-control}{in-house object storage solution} delivering $\sim 70\%$ feature parity with AWS S3}
-        
-        \resumeItem
-        {Designed \textbf{disk rebuild} subsystem for data recovery and built \textbf{disk-sets} to scan 4PB across 250+ disks}
-        
-        \resumeItem
-        {Developed asynchronous event-based HTTP \textbf{streaming processor} for \textbf{erasure coding} in API gateway}
-        
-        \resumeItem
-        {Implemented \textbf{server-side encryption} using the customer-provided keys across active-active replicated sites}
-
-        \resumeItem
-        {Mentored an intern in creating a Grafana dashboard for real-time cluster health monitoring}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-% ---
-
-\section{Research Experience}
-
-\resumeSubHeadingListStart
-
-    \resumeSubheadingTwoLiner
-    {Nexus Supercomputer Project \textit{with}
-     \href{https://scholar.google.com/citations?user=FVWrKb0AAAAJ}{Prof. Suresh Marru}}
-    {Atlanta, GA}
-    {Research Assistant $\mid$
-     C/C++, CUDA, Linux Kernel, Flamegraph}
-    {Aug 2025 - May 2026}
-
-    \resumeItemListStart
-        \resumeItem
-        {Designing a high-performance distributed file system for the \href{https://news.gatech.edu/news/2025/07/15/georgia-tech-build-20m-national-ai-supercomputer}{supercomputer} in collaboration with the \href{https://www.ncsa.illinois.edu}{NCSA}}
-
-        \resumeItem
-        {Working on FUSE optimizations using passthrough and io\_uring for attachable object storage backends}
-
-        \resumeItem
-        {Exploring RDMA, InfiniBand, and GPUDirect for zero-copy data transfer serving 10PB of NVMe storage}
-    \resumeItemListEnd
+    \vspace{-5pt}
     
-\resumeSubHeadingListEnd
+    \experience
+    {\href{https://cloud.rakuten.com}{Rakuten} (Robin.io)}
+    {Pune, India}
+    {Distributed Storage Engineer}
+    {C, Python, Kubernetes, PostgreSQL}
+    {Jun 2022 - Jul 2024}
+    \experienceStart
+        \point
+        {Engineered a high-performance \href{https://cloud.rakuten.com/blogs/a-next-generation-approach-to-object-storage-edge-ai-cost-and-control}{in-house object storage solution} in C++ to replace MinIO, achieving \textbf{\$4M+ annual cost savings} and reducing operational overhead across global clusters.}
+        
+        \point
+        {Architected a \textbf{disk rebuild subsystem} capable of recovering data across \textbf{4PB of storage} by implementing an erasure coding subsystem using \href{https://github.com/openstack/liberasurecode}{\texttt{liberasurecode}} and disk-sets to parallelize recovery across 250+ drives.}
+
+        \point
+        {Collaborated with senior principal engineer to implement RPC-based cluster manager orchestrating microservice lifecycle management such as data servers, metadata servers and gateways}
+        
+        \point
+        {Developed an asynchronous API gateway using GNU \href{https://www.gnu.org/software/libmicrohttpd}{\texttt{libmicrohttpd}} and designed a custom HTTP \textbf{byte-stream processor} to handle real-time, NUMA-aware \textbf{erasure coding} with minimal latency.}
+        
+        \point
+        {Implemented AES-256 Server-Side Encryption (SSE-C) with customer-provided keys, while ensuring strict data consistency across geographically distributed \textbf{active-active replicated sites}.}
+
+        \point
+        {Mentored an intern to integrate high-resolution telemetry in a Grafana dashboard for cluster health.}
+    \experienceEnd
+
+\subsectionListEnd
 
 % ---
 
 \section{Projects}
-\resumeSubHeadingListStart
 
-    \resumeSubheadingHeadingOneLiner
-    {\textbf{Xen Hypervisor Credit Scheduler} $\mid$
-     Operating Systems, C
-     \github{https://github.com/correaswebert/malloc}}
+\subsectionListStart
+
+    \project
+    {Xen Hypervisor Credit Scheduler}
+    {https://github.com/correaswebert/gtthreads}
+    {Operating Systems, C++}
     {Georgia Tech, Fall '25}
-
-    \resumeItemListStart
-        \resumeItem
+    \projectStart
+        \point
         {Implemented type-2 hosted hypervisor leveraging Linux signals for context switching and thread-local storage}
-        
-        \resumeItem
+        \point
         {Built M:N user-level threading library with a credit-based scheduler supporting load balancing across vCPUs}
-    \resumeItemListEnd
+    \projectEnd
+    
 
-    \vspace{5pt}
-    % ---
+    \vspace{-10pt}
+
+    \project
+    {LLM Inference Optimization on GPU}    {https://github.gatech.edu/scorrea34/CS8803_Proj4_frame}
+    {GPU Architecture, CUDA, PyTorch}
+    {Georgia Tech, Fall '25}
+    \projectStart
+        \point
+        {Developed a custom \textbf{FlashAttention} kernel in CUDA with kernel fusion to minimize off-chip memory traffic.}
         
-    \resumeSubheadingHeadingOneLiner
-    {\textbf{Deadlock Detection and Resolution} $\mid$
-     Databases, C++, Valgrind
-     \github{https://buzzdb-docs.readthedocs.io/part2/lab3.html}}
+        \point
+        {Designed a tiling mechanism using shared memory and online softmax for numerical stability and. scalability}
+        
+        \point
+        {Optimized \textbf{KV cache} management to reduce TBT, TTFT \& latency and the increase context window.}
+    \projectEnd
+
+    \vspace{-10pt}
+
+    \project
+    {BuzzDB Database Implementation}
+    {https://buzzdb-docs.readthedocs.io/part2/index.html}
+    {Database Internals, C++, Valgrind}
     {Georgia Tech, Spring '25}
+    \projectStart
+        \point
+        {Implemented a WAL in an ARIES-compliant log manager along with fuzzy checkpointing optimization.}
 
-    \resumeItemListStart
-        \resumeItem
-        {Implemented two-phase locking mechanism for BuzzDB to ensure transaction isolation and atomicity}
+        \point
+        {Built a lock manager supporting 2-Phase Locking protocol to enable high-concurrency transaction processing.}
 
-        \resumeItem
-        {Designed deadlock detection using wait-for graph and resolved it based on transaction age and starvation}
-    \resumeItemListEnd
+        \point
+        {Designed a query optimizer that utilizes catalog statistics, selectivity estimation, and join-ordering.}
+    \projectEnd
 
-    \vspace{5pt}
-    % ---
-
-    \resumeSubheadingHeadingOneLiner
-    {\textbf{MIT xv6 Ext2 File System} $\mid$
-     Operating Systems, C, Qemu
-     \github{https://gitlab.com/correaswebert/xv6-ext2}}
-    {COEP, Spring '21}
-
-    \resumeItemListStart
-        \resumeItem
-        {Extended xv6 with Ext2 file system, implementing buffer cache management, tree-based searching and logging}
-
-        \resumeItem
-        {Built a Virtual File System layer with additional file-system APIs and required corresponding syscalls}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
+\subsectionListEnd
 
 \end{document}
