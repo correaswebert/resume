@@ -155,14 +155,14 @@ $\cdot$
     \vspace{-5pt}
 
     \resumeItem
-    {\textbf{Technologies:}
-     Kubernetes, Docker, PostgreSQL, DynamoDB, GDB, Strace, Nsight Git, Jenkins}
+    {\textbf{Infrastructure:}
+     Kubernetes, Docker, AWS (S3, EC2, Lambda, SQS), PostgreSQL, DynamoDB, Git, Jenkins}
 
     \vspace{-5pt}
 
     \resumeItem
-    {\textbf{Domains:}
-    Database Internals, Operating Systems, Parallel Programming, Kernel Optimization}
+    {\textbf{Systems:}
+     Valgrind, GDB, Strace, NVIDIA Nsight, Flame Graph}
 \resumeItemListEnd
 
 % ---
@@ -199,22 +199,22 @@ $\cdot$
 
     \resumeItemListStart
         \resumeItem
-        {Engineered a high-performance \href{https://cloud.rakuten.com/blogs/a-next-generation-approach-to-object-storage-edge-ai-cost-and-control}{in-house object storage solution} in C++ to replace MinIO, achieving \textbf{\$4M+ annual cost savings} and reducing operational overhead across global clusters.}
+        {Engineered high-performance \href{https://cloud.rakuten.com/blogs/a-next-generation-approach-to-object-storage-edge-ai-cost-and-control}{in-house object storage solution} \textbf{tailored for AI workloads} to replace MinIO, achieving \textbf{\$4M+ annual cost savings} and reducing operational overhead across global clusters.}
         
         \resumeItem
         {Architected a \textbf{disk rebuild subsystem} capable of recovering data across \textbf{4PB of storage} by implementing an erasure coding subsystem using \href{https://github.com/openstack/liberasurecode}{\texttt{liberasurecode}} and disk-sets to parallelize recovery across 250+ drives.}
 
         \resumeItem
-        {Collaborated with senior principal engineer to implement RPC-based cluster manager orchestrating microservice lifecycle management such as data servers, metadata servers and gateways based on workload.}
+        {Developed a high-availability RPC-based \textbf{cluster manager over Kubernetes} for workload-based microservice lifecycle management such as data servers, metadata servers and gateways.}
         
         \resumeItem
-        {Developed an asynchronous API gateway using GNU \href{https://www.gnu.org/software/libmicrohttpd}{\texttt{libmicrohttpd}} and designed a custom HTTP \textbf{byte-stream processor} to handle real-time, NUMA-aware \textbf{erasure coding} with minimal latency.}
+        {Developed an asynchronous API gateway with distributed caching and a custom HTTP \textbf{byte-stream processor} using GNU \href{https://www.gnu.org/software/libmicrohttpd}{\texttt{libmicrohttpd}} to handle real-time, \textbf{NUMA-aware erasure coding}.}
         
         \resumeItem
-        {Partnered with senior staff to implement resumable multipart upload for parallelized data transfer and content-addressable chunk \textbf{deduplication engine} to optimize storage utilization and reduce I/O overhead.}
+        {Spearheaded the resumable multipart upload for parallelized data transfer and content-addressable chunk \textbf{deduplication engine} to optimize storage utilization and reduce I/O overhead.}
 
         \resumeItem
-        {Mentored an intern to integrate high-resolution telemetry in a Grafana dashboard for cluster health.}
+        {Mentored an intern to integrate high-resolution telemetry in a \textbf{Grafana} dashboard for cluster health.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -240,7 +240,7 @@ $\cdot$
     \vspace{10pt}
 
     \resumeSubheadingHeadingOneLiner
-    {\href{https://github.gatech.edu/scorrea34/CS8803_Proj4_frame}{\textbf{LLM Inference Optimization on GPU}} $\mid$    
+    {\href{https://github.com/correaswebert/flash-attention}{\textbf{LLM Inference Optimization on GPU}} $\mid$    
     GPU Architecture, CUDA, PyTorch}
     {Georgia Tech, Fall '25}
     \resumeItemListStart
